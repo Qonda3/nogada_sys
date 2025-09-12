@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cybersecurity Dark Theme */
+    --background: 210 30% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 210 25% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 210 25% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 240 75% 65%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 210 20% 15%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 280 70% 60%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --success: 120 60% 50%;
+    --success-foreground: 210 20% 98%;
+
+    --warning: 35 90% 60%;
+    --warning-foreground: 210 20% 98%;
+
+    --border: 210 20% 20%;
+    --input: 210 20% 15%;
+    --ring: 240 75% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom cybersecurity colors */
+    --cyber-blue: 240 75% 65%;
+    --cyber-purple: 280 70% 60%;
+    --threat-red: 0 75% 60%;
+    --safe-green: 120 60% 50%;
+    --warning-orange: 35 90% 60%;
+    
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-blue)) 0%, hsl(var(--cyber-purple)) 100%);
+    --gradient-threat: linear-gradient(135deg, hsl(var(--threat-red)) 0%, hsl(35 90% 60%) 100%);
+    --gradient-safe: linear-gradient(135deg, hsl(var(--safe-green)) 0%, hsl(140 60% 50%) 100%);
+    
+    /* Shadows */
+    --shadow-cyber: 0 0 30px hsl(var(--cyber-blue) / 0.3);
+    --shadow-threat: 0 0 30px hsl(var(--threat-red) / 0.4);
+    --shadow-safe: 0 0 30px hsl(var(--safe-green) / 0.3);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode keeps same cybersecurity theme */
+    --background: 210 30% 6%;
+    --foreground: 210 20% 98%;
+
+    --card: 210 25% 8%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 210 25% 8%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 240 75% 70%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 210 20% 12%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 210 20% 12%;
+    --muted-foreground: 210 15% 70%;
+
+    --accent: 280 70% 65%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 210 20% 18%;
+    --input: 210 20% 12%;
+    --ring: 240 75% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .cyber-glow {
+    box-shadow: var(--shadow-cyber);
+  }
+  
+  .threat-glow {
+    box-shadow: var(--shadow-threat);
+  }
+  
+  .safe-glow {
+    box-shadow: var(--shadow-safe);
+  }
+  
+  .cyber-gradient {
+    background: var(--gradient-cyber);
+  }
+  
+  .threat-gradient {
+    background: var(--gradient-threat);
+  }
+  
+  .safe-gradient {
+    background: var(--gradient-safe);
+  }
+
+  .pulse-cyber {
+    animation: pulse-cyber 2s ease-in-out infinite;
+  }
+  
+  .pulse-threat {
+    animation: pulse-threat 1.5s ease-in-out infinite;
+  }
+  
+  .pulse-safe {
+    animation: pulse-safe 2.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-cyber {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes pulse-threat {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes pulse-safe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
