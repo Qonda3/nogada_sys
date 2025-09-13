@@ -115,7 +115,7 @@ const Dashboard = () => {
             </div>
             <div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                CyberGuard SA
+                 Nogada 
               </h1>
               <p className="text-muted-foreground">AI-Powered Social Engineering Protection</p>
             </div>
